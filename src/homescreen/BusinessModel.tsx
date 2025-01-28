@@ -1,7 +1,7 @@
 function BusinessModel() {
   return (
     <div>
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-white border-t border-gray-300">
         <div className="max-w-6xl mx-auto">
           {/* Title Section */}
           <div className="text-center mb-12">
@@ -87,9 +87,9 @@ function BusinessModel() {
           {/* Second Row: Now treat Konsulter as TWO cards for equal height */}
           <div className="mt-12 grid md:grid-cols-2 gap-8 items-stretch">
             {/* Card 3: Konsulter (Text) */}
-            <div className="flex flex-col h-full p-6 bg-[#FFFFFF] rounded-md">
+            <div className="flex flex-col items-center md:items-start justify-center h-full p-6 bg-[#FFFFFF] rounded-md">
               <h3 className="text-xl font-bold mb-4">Konsulter</h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 mb-6 text-center md:text-start">
                 Stärk ert team med experter på era villkor – tekniska eller
                 kreativa konsulter som matchar er perfekt och levererar
                 resultat direkt.
@@ -106,8 +106,7 @@ function BusinessModel() {
 
             {/* Card 4: Konsulter (Image) */}
             <div className="flex flex-col h-full p-6 rounded-md">
-              {/* If you had text above an image, place it here,
-                  then use "mt-auto" to push image to bottom */}
+             
               <img
                 src="/team_avatar.png"
                 alt="Team Avatars"

@@ -21,9 +21,9 @@ export default function CTASection() {
           <input
             type="email"
             placeholder="Fyll i företagsmejl..."
-            className="w-full px-4 py-2 border border-white rounded-lg focus:outline-none focus:border-[#7CF5D5] bg-white pr-28" // Adjusted pr-28 for more padding
+            className="w-full px-4 py-3 focus:outline-none focus:border-[#7CF5D5] bg-white pr-" // Adjusted pr-28 for more padding
           />
-          <button className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#7CF5D5] text-black py-2 px-6 rounded-lg font-medium hover:bg-[#6ad4b8] transition">
+          <button className="absolute right-1 top-1/2 transform -translate-y-1/2 bg-[#7CF5D5] text-black py-2 px-5 font-medium hover:bg-[#6ad4b8] transition">
             Kom igång
           </button>
         </div>

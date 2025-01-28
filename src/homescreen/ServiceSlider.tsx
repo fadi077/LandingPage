@@ -28,7 +28,7 @@ const ServiceSlider = () => {
 
   return (
     <div>
-      <section className="py-10 px-4 bg-white">
+      <section className="py-10 px-4 bg-white mb-6">
         <div className="text-center mb-8">
           <span className="inline-block bg-[#1A2B3B] text-[#7CF5D5] text-xs font-medium tracking-wide px-4 py-1 mb-4">
             VÅRA TJÄNSTER

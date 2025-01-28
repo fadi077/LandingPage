@@ -2,7 +2,7 @@
 function Cta() {
   return (
     <div>
-      <section className="bg-[#3FF0C7] py-20 px-4">
+      <section className="bg-[#3FF0C7] mt-20 py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Redo att ta nästa steg?</h2>
           <p className="text-gray-700 mb-8">

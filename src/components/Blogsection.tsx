@@ -27,7 +27,7 @@ function BlogCard({ image, category, readTime, title }: BlogCardProps) {
 
 function Blogsection() {
   return (
-    <section className="bg-[#F6F6F6] py-16 ">
+    <section className="bg-[#F6F6F6] py-16 mt-20 border-t ">
       <div className=" max-w-6xl mx-auto px-4">
         
         {/* Section Heading */}

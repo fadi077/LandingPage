@@ -4,7 +4,7 @@ import { Star } from 'lucide-react'
 function Testimonals() {
   return (
     <div>
-      <section className="py-4 mb-8 bg-white">
+      <section className="py-2 mt-16 mb-10 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
             {/* Card 1 */}

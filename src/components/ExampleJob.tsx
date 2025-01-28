@@ -1,12 +1,10 @@
 import { ReactNode, ButtonHTMLAttributes } from "react";
 
-// ButtonProps Interface
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   className?: string;
 }
 
-// SolutionCardProps Interface
 interface SolutionCardProps {
   imagePosition: "left" | "right";
   imageSrc: string;
@@ -15,21 +13,15 @@ interface SolutionCardProps {
   description: string;
 }
 
-/* ---------------------------
-   Reusable Button Component
---------------------------- */
 const Button = ({ children, className = "", ...props }: ButtonProps) => (
   <button
-    className={`px-8 py-2 mt-2 text-sm font-semibold transition-colors ${className}`}
+    className={`px-8 py-2 text-sm font-semibold transition-colors ${className}`}
     {...props}
   >
     {children}
   </button>
 );
 
-/* ---------------------------
-   SolutionCard Component
---------------------------- */
 const SolutionCard = ({
   imagePosition,
   imageSrc,
@@ -40,41 +32,42 @@ const SolutionCard = ({
   return (
     <div
       className={`
-        flex flex-col lg:flex-row 
-        ${imagePosition === "right" ? "lg:flex-row-reverse" : ""}
-        items-start mb-6 w-full max-w-5xl mx-auto
+        flex flex-col ${imagePosition === "right" ? "lg:flex-row-reverse" : "lg:flex-row"}
+        items-center gap-12 mb-20 w-full max-w-6xl mx-auto px-4 lg:px-8
       `}
     >
-      {/* Image */}
-      <div className="w-full lg:w-1/2 flex justify-start items-center pr-2">
-        <img
-          src={imageSrc}
-          alt={title}
-          className="shadow-lg object-cover max-h-60 w-3/4"
-        />
+      {/* Image Container */}
+      <div className="lg:w-1/2 flex items-center justify-center">
+        <div className="">
+          <img
+            src={imageSrc}
+            alt={title}
+            className=""
+          />
+        </div>
       </div>
 
-      {/* Text / Buttons */}
-      <div className="w-full lg:w-1/2 flex flex-col pl-2">
-        <p className="text-xs text-black font-medium mt-2 mb-1">
+      {/* Content */}
+      <div className="w-full md:w-1/2 lg:w-1/2 flex flex-col">
+        <span className="text-sm text-gray-900 mb-2">
           {header}
-        </p>
-        <h3 className="text-sm font-extrabold mt-0 mb-1">
+        </span>
+        <h3 className="text-2xl font-bold mb-4 text-gray-900">
           {title}
         </h3>
-        <p className="text-gray-700 text-sm leading-relaxed mt-1 mb-1">
+        <p className="text-gray-600 text-base leading-relaxed mb-6">
           {description}
         </p>
 
-        {/* Tag-like Buttons */}
-        <div className="flex gap-2 flex-wrap">
-          <span className="text-xs border border-gray-300 text-gray-700 bg-[#D6E7F0] p-2">
+        {/* Tags */}
+        <div className="flex flex-wrap gap-3">
+          <span className="px-4 py-2 bg-[#E8F4F9] text-gray-700 rounded-md text-sm">
             Webinarpresentation
           </span>
-          <span className="text-xs border border-gray-300 text-gray-700 bg-[#D6E7F0] p-2">
+          <span className="px-4 py-2 bg-[#E8F4F9] text-gray-700 rounded-md text-sm">
             Sales Decks
           </span>
-          <span className="text-xs border border-gray-300 text-gray-700 bg-[#D6E7F0] p-2 hidden md:inline-flex">
+          <span className="px-4 py-2 bg-[#E8F4F9] text-gray-700 rounded-md text-sm hidden md:inline-flex">
             Webinarpresentation
           </span>
         </div>
@@ -83,7 +76,6 @@ const SolutionCard = ({
   );
 };
 
-// Solutions array for "Example Job" section
 const solutions: SolutionCardProps[] = [
   {
     imagePosition: "left",
@@ -91,7 +83,7 @@ const solutions: SolutionCardProps[] = [
     header: "Din Berättelse, Vår Design",
     title: "Professionellt Designade Presentationer för Varje Tillfälle",
     description:
-      "Med vår erfarenhet och kreativa designmetoder säkerställer vi att ditt presentationsmaterial fångar publikens uppmärksamhet och förstärker ditt budskap.",
+      "Med vår erfarenhet och kreativa designmetoder säkerställer vi att ditt presentations material fångar publikens uppmärksamhet och förstärker ditt budskap. Vi samarbetar med dig för att förstå dina behov och skapa anpassade lösningar som överträffar dina förväntningar.",
   },
   {
     imagePosition: "right",
@@ -99,7 +91,7 @@ const solutions: SolutionCardProps[] = [
     header: "Din Berättelse, Vår Design",
     title: "Professionellt Designade Presentationer för Varje Tillfälle",
     description:
-      "Med vår erfarenhet och kreativa designmetoder säkerställer vi att ditt presentationsmaterial fångar publikens uppmärksamhet och förstärker ditt budskap.",
+      "Med vår erfarenhet och kreativa designmetoder säkerställer vi att ditt presentations material fångar publikens uppmärksamhet och förstärker ditt budskap. Vi samarbetar med dig för att förstå dina behov och skapa anpassade lösningar som överträffar dina förväntningar.",
   },
   {
     imagePosition: "left",
@@ -107,7 +99,7 @@ const solutions: SolutionCardProps[] = [
     header: "Din Berättelse, Vår Design",
     title: "Professionellt Designade Presentationer för Varje Tillfälle",
     description:
-      "Med vår erfarenhet och kreativa designmetoder säkerställer vi att ditt presentationsmaterial fångar publikens uppmärksamhet och förstärker ditt budskap.",
+      "Med vår erfarenhet och kreativa designmetoder säkerställer vi att ditt presentations material fångar publikens uppmärksamhet och förstärker ditt budskap. Vi samarbetar med dig för att förstå dina behov och skapa anpassade lösningar som överträffar dina förväntningar.",
   },
   {
     imagePosition: "right",
@@ -115,38 +107,40 @@ const solutions: SolutionCardProps[] = [
     header: "Din Berättelse, Vår Design",
     title: "Professionellt Designade Presentationer för Varje Tillfälle",
     description:
-      "Med vår erfarenhet och kreativa designmetoder säkerställer vi att ditt presentationsmaterial fångar publikens uppmärksamhet och förstärker ditt budskap.",
+      "Med vår erfarenhet och kreativa designmetoder säkerställer vi att ditt presentations material fångar publikens uppmärksamhet och förstärker ditt budskap. Vi samarbetar med dig för att förstå dina behov och skapa anpassade lösningar som överträffar dina förväntningar.",
   },
 ];
 
 function ExampleJob() {
   return (
-    <section className="py-8 bg-white">
-      <div className="md:rounded mx-auto px-4 py-8 bg-[#F6F6F6]">
-        {/* Top Heading */}
-        <div className="text-center mb-6">
-          <span className="inline-block bg-black text-[#7CF5D5] text-xs font-semibold uppercase px-5 py-2 mt-14 mb-4">
-            E x e m p e l j o b b
+    <section className="py-16 bg-[#F6F6F6] mt-16">
+      <div className="max-w-7xl mx-auto ">
+        {/* Header */}
+        <div className="text-center mb-16 px-4">
+          <span className="inline-block bg-black text-[#7CF5D5] text-sm font-medium tracking-wider px-6 py-2 mb-6">
+            EXEMPELJOBB
           </span>
-          <h2 className="text-3xl font-bold mb-2">
+          <h2 className="text-4xl font-bold mb-4 text-gray-900">
             Våra Lösningar i Praktiken
           </h2>
-          <p className="text-gray-600 text-sm max-w-xl mx-auto">
-            Vi har gjort mer än vi kan visa – men NDA:er håller oss tysta. Här är ett
-            urval av vad vi kan dela.
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Vi har gjort mer än vi kan visa – men NDA:er håller oss tysta. Här är ett urval av vad vi kan dela.
           </p>
         </div>
 
-        {/* Cards */}
-        <div>
+        {/* Solution Cards */}
+        <div className="space-y-20">
           {solutions.map((solution, index) => (
             <SolutionCard key={index} {...solution} />
           ))}
         </div>
 
         {/* Load More Button */}
-        <div className="flex justify-center mt-6">
-          <Button className="bg-[#7CF5D5] hover:bg-[#63dac1] border-0 text-black">
+        <div className="flex justify-center mt-12">
+          <Button 
+            className="bg-[#7CF5D5] hover:bg-[#6CE4C4] text-[#122229]"
+            onClick={() => console.log('Load more clicked')}
+          >
             Ladda in fler
           </Button>
         </div>

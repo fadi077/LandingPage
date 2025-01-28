@@ -1,6 +1,6 @@
 export default function CTASection() {
   return (
-    <section className="bg-[#7CF5D5] py-16">
+    <section className="bg-[#7CF5D5] py-16 mt-20">
       <div className="max-w-xl mx-auto px-4 text-center">
         
         {/* Heading */}

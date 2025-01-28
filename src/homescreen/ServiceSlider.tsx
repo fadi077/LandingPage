@@ -6,17 +6,15 @@ const ServiceSlider = () => {
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: -300, behavior: "smooth" });
+      scrollContainerRef.current.scrollBy({ left: -280, behavior: "smooth" });
     }
   };
 
   const scrollRight = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: 300, behavior: "smooth" });
+      scrollContainerRef.current.scrollBy({ left: 280, behavior: "smooth" });
     }
   };
-
-  console.log(scrollContainerRef.current); // Debugging log
 
   const services = [
     { id: 1, src: "/ebook_design.png", alt: "E-bok design" },
@@ -27,39 +25,39 @@ const ServiceSlider = () => {
   ];
 
   return (
-    <div>
-      <section className="py-10 px-4 bg-white mb-6">
-        <div className="text-center mb-8">
-          <span className="inline-block bg-[#1A2B3B] text-[#7CF5D5] text-xs font-medium tracking-wide px-4 py-1 mb-4">
+    <div className="w-full">
+      <section className="py-6 px-4 bg-white mb-10">
+        <div className="text-center mb-6">
+          <span className="inline-block bg-[#1A2B3B] text-[#7CF5D5] text-xs font-medium tracking-wide px-4 py-1 mb-3 rounded">
             VÅRA TJÄNSTER
           </span>
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+          <h2 className="text-xl font-bold text-gray-900 px-4">
             Ett spektrum av kreativa & tekniska lösningar
           </h2>
         </div>
 
-        <div className="relative max-w-7xl mx-auto">
+        <div className="relative">
           <button
             onClick={scrollLeft}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black text-white rounded-full p-2 shadow-md hover:bg-[#2DD3AD] transition"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black/80 text-white rounded-full p-1.5 shadow-md"
             aria-label="Scroll left"
           >
-            <ChevronLeft className="w-6 h-6" />
+            <ChevronLeft className="w-5 h-5" />
           </button>
 
           <div
             ref={scrollContainerRef}
-            className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth px-4 no-scrollbar"
+            className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth px-4 no-scrollbar"
           >
             {services.map((service) => (
               <div
                 key={service.id}
-                className="min-w-[250px] h-[400px] snap-start overflow-hidden rounded-lg bg-white shadow-lg"
+                className="min-w-[280px] h-[360px] snap-start rounded-lg bg-white shadow-md"
               >
                 <img
                   src={service.src}
                   alt={service.alt}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-lg"
                 />
               </div>
             ))}
@@ -67,10 +65,10 @@ const ServiceSlider = () => {
 
           <button
             onClick={scrollRight}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-[#3FF0C7] rounded-full p-2 shadow-md hover:bg-[#2DD3AD] transition"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-[#3FF0C7] rounded-full p-1.5 shadow-md"
             aria-label="Scroll right"
           >
-            <ChevronRight className="w-6 h-6" />
+            <ChevronRight className="w-5 h-5" />
           </button>
         </div>
       </section>

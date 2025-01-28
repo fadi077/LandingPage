@@ -3,9 +3,7 @@ import { useState } from "react";
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleMenuClick = () => {
-    setMenuOpen(false);
-  };
+   
 
   return (
     <nav className="bg-white border-b border-gray-100">

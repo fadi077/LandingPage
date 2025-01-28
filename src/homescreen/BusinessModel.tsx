@@ -85,7 +85,7 @@ function BusinessModel() {
           </div>
 
           {/* Second Row: Now treat Konsulter as TWO cards for equal height */}
-          <div className="mt-12 grid md:grid-cols-2 gap-8 items-stretch">
+          <div className="mt-4 grid md:grid-cols-2 gap-8 items-stretch">
             {/* Card 3: Konsulter (Text) */}
             <div className="flex flex-col items-center md:items-start justify-center h-full p-6 bg-[#FFFFFF] rounded-md">
               <h3 className="text-xl font-bold mb-4">Konsulter</h3>

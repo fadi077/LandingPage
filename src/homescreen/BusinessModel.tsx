@@ -5,7 +5,7 @@ function BusinessModel() {
         <div className="max-w-6xl mx-auto">
           {/* Title Section */}
           <div className="text-center mb-12">
-            <span className="inline-block bg-[#1A2B3B] text-[#7CF5D5] text-xs font-medium tracking-wide  px-4 py-1 mb-4">
+            <span className="inline-block bg-[#1A2B3B] text-[#7CF5D5] text-xs font-medium tracking-wide px-4 py-1 mb-4">
               AFFÄRSMODELL
             </span>
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
@@ -17,87 +17,101 @@ function BusinessModel() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Projekt */}
-            <div>
-              <h3 className="text-xl font-bold mb-2 text-center md:text-left">
-                Projekt
-              </h3>
-              <p className="text-gray-600 mb-4 text-center md:text-left">
-                Behöver ni hjälp med ett specifikt projekt? Vi tar hand om allt
-                från start till leverans – enkelt, smidigt och helt anpassat
-                efter era behov.
-              </p>
-              {/* Buttons */}
-              <div className="flex gap-4 justify-center md:justify-start">
-                <button className="bg-[#3FF0C7] text-gray-900 px-6 py-2 font-medium">
-                  Kom igång
-                </button>
-                <button className="border 1px border-gray-300 px-6 py-2 font-medium">
-                  Läs mer
-                </button>
+          {/* First Row: Projekt & Prenumeration */}
+          <div className="grid md:grid-cols-2 gap-8 items-stretch">
+            {/* Card 1: Projekt */}
+            <div className="flex flex-col h-full p-4 border-white rounded-md">
+              {/* Top Section */}
+              <div>
+                <h3 className="text-xl font-bold mb-2 text-center md:text-left">
+                  Projekt
+                </h3>
+                <p className="text-gray-600 mb-4 text-center md:text-left">
+                  Behöver ni hjälp med ett specifikt projekt? Vi tar hand om allt
+                  från start till leverans – enkelt, smidigt och helt anpassat
+                  efter era behov.
+                </p>
+                {/* Buttons */}
+                <div className="flex gap-4 justify-center md:justify-start">
+                  <button className="bg-[#7CF5D5] hover:bg-[#5BE3C0] text-black font-medium px-6 py-2 rounded transition duration-300">
+                    Kom igång
+                  </button>
+                  <button className="border border-gray-300 hover:bg-gray-50 text-black font-medium px-6 py-2 rounded transition duration-300">
+                    Läs mer
+                  </button>
+                </div>
               </div>
-              {/* Image */}
-              <div className="mt-4 flex items-end">
+              {/* Image at bottom */}
+              <div className="mt-auto">
                 <img
                   src="/webprojekt.png"
                   alt="Project Dashboard"
-                  className="w-full"
+                  className="w-full h-auto mt-4"
                 />
               </div>
             </div>
 
-            {/* Prenumeration */}
-            <div>
-              <h3 className="text-xl font-bold mb-2 text-center md:text-left">
-                Prenumeration
-              </h3>
-              <p className="text-gray-600 mb-4 text-center md:text-left">
-                Flexibelt samarbete med en timbunk som täcker både kreativa och
-                tekniska behov – perfekt för företag som vill ha ett nära,
-                snabbt och effektivt samarbete.
-              </p>
-              <div className="flex gap-4 justify-center md:justify-start">
-                <button className="bg-[#3FF0C7] text-gray-900 px-6 py-2 font-medium">
-                  Kom igång
-                </button>
-                <button className="border border-gray-300 px-6 py-2 font-medium">
-                  Läs mer
-                </button>
+            {/* Card 2: Prenumeration */}
+            <div className="flex flex-col h-full p-4 rounded-md">
+              {/* Top Section */}
+              <div>
+                <h3 className="text-xl font-bold mb-2 text-center md:text-left">
+                  Prenumeration
+                </h3>
+                <p className="text-gray-600 mb-4 text-center md:text-left">
+                  Flexibelt samarbete med en timbank som täcker både kreativa och
+                  tekniska behov – perfekt för företag som vill ha ett nära,
+                  snabbt och effektivt samarbete.
+                </p>
+                {/* Buttons */}
+                <div className="flex gap-4 justify-center md:justify-start">
+                  <button className="bg-[#7CF5D5] hover:bg-[#5BE3C0] text-black font-medium px-6 py-2 rounded transition duration-300">
+                    Kom igång
+                  </button>
+                  <button className="border border-gray-300 hover:bg-gray-50 text-black font-medium px-6 py-2 rounded transition duration-300">
+                    Läs mer
+                  </button>
+                </div>
               </div>
-              <div className="mt-4 flex items-end">
+              {/* Image at bottom */}
+              <div className="mt-auto">
                 <img
                   src="/subscription_dashboard.png"
                   alt="Subscription Dashboard"
-                  className="w-full"
+                  className="w-full h-auto mt-4"
                 />
               </div>
             </div>
           </div>
 
-          {/* Konsulter */}
-          <div className="mt-8">
-            <div className="md:flex md:justify-between md:items-center">
-              <div className="text-center md:text-left">
-                <h3 className="text-xl font-bold mb-4">Konsulter</h3>
-                <p className="text-gray-600 mb-6 max-w-xl mx-auto md:mx-0">
-                  Stärk ert team med experter på era villkor – tekniska eller
-                  kreativa konsulter som matchar er perfekt och levererar
-                  resultat direkt.
-                </p>
-                <div className="flex gap-4 justify-center md:justify-start">
-                  <button className="bg-[#3FF0C7] text-gray-900 px-6 py-2 font-medium">
-                    Kom igång
-                  </button>
-                  <button className="border border-gray-300 px-6 py-2 font-medium">
-                    Läs mer
-                  </button>
-                </div>
+          {/* Second Row: Now treat Konsulter as TWO cards for equal height */}
+          <div className="mt-12 grid md:grid-cols-2 gap-8 items-stretch">
+            {/* Card 3: Konsulter (Text) */}
+            <div className="flex flex-col h-full p-6 bg-[#FFFFFF] rounded-md">
+              <h3 className="text-xl font-bold mb-4">Konsulter</h3>
+              <p className="text-gray-600 mb-6">
+                Stärk ert team med experter på era villkor – tekniska eller
+                kreativa konsulter som matchar er perfekt och levererar
+                resultat direkt.
+              </p>
+              <div className="flex gap-4">
+                <button className="bg-[#7CF5D5] hover:bg-[#5BE3C0] text-black font-medium px-6 py-2 rounded transition duration-300">
+                  Kom igång
+                </button>
+                <button className="border border-gray-300 hover:bg-gray-50 text-black font-medium px-6 py-2 rounded transition duration-300">
+                  Läs mer
+                </button>
               </div>
+            </div>
+
+            {/* Card 4: Konsulter (Image) */}
+            <div className="flex flex-col h-full p-6 rounded-md">
+              {/* If you had text above an image, place it here,
+                  then use "mt-auto" to push image to bottom */}
               <img
                 src="/team_avatar.png"
                 alt="Team Avatars"
-                className="mt-8 md:mt-0 md:w-140 mx-auto md:mx-0"
+                className="w-full h-auto mt-auto"
               />
             </div>
           </div>

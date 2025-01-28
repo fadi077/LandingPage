@@ -1,7 +1,5 @@
 import { ReactNode, ButtonHTMLAttributes } from "react";
 
-// BlogCardProps Interface
-
 // ButtonProps Interface
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
@@ -22,7 +20,7 @@ interface SolutionCardProps {
 --------------------------- */
 const Button = ({ children, className = "", ...props }: ButtonProps) => (
   <button
-    className={`px-4 py-2 rounded text-sm font-semibold ${className}`}
+    className={`px-8 py-2 mt-2 text-sm font-semibold transition-colors ${className}`}
     {...props}
   >
     {children}
@@ -41,38 +39,44 @@ const SolutionCard = ({
 }: SolutionCardProps) => {
   return (
     <div
-      className={`w-[90%] md:w-[80%] flex flex-col lg:flex-row ${
-        imagePosition === "right" ? "lg:flex-row-reverse" : ""
-      } items-start mb-12`}
+      className={`
+        flex flex-col lg:flex-row 
+        ${imagePosition === "right" ? "lg:flex-row-reverse" : ""}
+        items-start mb-6 w-full max-w-5xl mx-auto
+      `}
     >
       {/* Image */}
-      <div className="w-full lg:w-1/2 flex justify-center mb-6 lg:mb-0 lg:pl-5">
+      <div className="w-full lg:w-1/2 flex justify-start items-center pr-2">
         <img
           src={imageSrc}
           alt={title}
-          className="shadow-lg object-cover max-h-64"
+          className="shadow-lg object-cover max-h-60 w-3/4"
         />
       </div>
 
       {/* Text / Buttons */}
-      <div className="lg:pl-5">
-        <p className="text-sm text-gray-500 uppercase tracking-wider mb-2 font-medium">
+      <div className="w-full lg:w-1/2 flex flex-col pl-2">
+        <p className="text-xs text-black font-medium mt-2 mb-1">
           {header}
         </p>
-        <h3 className="text-2xl font-bold mb-3">{title}</h3>
-        <p className="text-gray-700 mb-6 leading-relaxed">{description}</p>
+        <h3 className="text-sm font-extrabold mt-0 mb-1">
+          {title}
+        </h3>
+        <p className="text-gray-700 text-sm leading-relaxed mt-1 mb-1">
+          {description}
+        </p>
 
-        <div className="flex flex-wrap gap-3">
-          {/* Buttons */}
-          <Button className="border border-gray-300 text-gray-700 bg-[#D6E7F0] hover:bg-gray-100">
+        {/* Tag-like Buttons */}
+        <div className="flex gap-2 flex-wrap">
+          <span className="text-xs border border-gray-300 text-gray-700 bg-[#D6E7F0] p-2">
             Webinarpresentation
-          </Button>
-          <Button className="border border-gray-300 text-gray-700 bg-[#D6E7F0] hover:bg-gray-100">
+          </span>
+          <span className="text-xs border border-gray-300 text-gray-700 bg-[#D6E7F0] p-2">
             Sales Decks
-          </Button>
-          <Button className="border border-gray-300 text-gray-700 bg-[#D6E7F0] hover:bg-gray-100 hidden md:inline-flex">
+          </span>
+          <span className="text-xs border border-gray-300 text-gray-700 bg-[#D6E7F0] p-2 hidden md:inline-flex">
             Webinarpresentation
-          </Button>
+          </span>
         </div>
       </div>
     </div>
@@ -117,40 +121,37 @@ const solutions: SolutionCardProps[] = [
 
 function ExampleJob() {
   return (
-    <div>
-      <section className="py-8 bg-white">
-        <div className="max-w-7xl mx-auto px-4 py-16 bg-[#F6F6F6]">
-          {/* Top Heading */}
-          <div className="text-center mb-10">
-            <h3 className="text-sm font-semibold bg-black text-[#7CF5D5] uppercase mb-5 p-2 inline-block">
-              Exempeljobb
-            </h3>
-            <h2 className="text-4xl font-bold mb-2">
-              Våra Lösningar i Praktiken
-            </h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
-              Vi har gjort mer än vi kan visa – men NDA:er håller oss tysta. Här
-              är ett urval av vad vi kan dela.
-            </p>
-          </div>
-
-          {/* Cards */}
-
-          <div className="flex flex-col items-center">
-            {solutions.map((solution, index) => (
-              <SolutionCard key={index} {...solution} />
-            ))}
-          </div>
-
-          {/* Load More Button */}
-          <div className="flex justify-center mt-8">
-            <Button className="px-8 py-3 text-lg font-semibold bg-[#7CF5D5] hover:bg-[#63dac1] transition-colors">
-              Ladda in fler
-            </Button>
-          </div>
+    <section className="py-8 bg-white">
+      <div className="md:rounded mx-auto px-4 py-8 bg-[#F6F6F6]">
+        {/* Top Heading */}
+        <div className="text-center mb-6">
+          <span className="inline-block bg-black text-[#7CF5D5] text-xs font-semibold uppercase px-5 py-2 mt-14 mb-4">
+            E x e m p e l j o b b
+          </span>
+          <h2 className="text-3xl font-bold mb-2">
+            Våra Lösningar i Praktiken
+          </h2>
+          <p className="text-gray-600 text-sm max-w-xl mx-auto">
+            Vi har gjort mer än vi kan visa – men NDA:er håller oss tysta. Här är ett
+            urval av vad vi kan dela.
+          </p>
         </div>
-      </section>
-    </div>
+
+        {/* Cards */}
+        <div>
+          {solutions.map((solution, index) => (
+            <SolutionCard key={index} {...solution} />
+          ))}
+        </div>
+
+        {/* Load More Button */}
+        <div className="flex justify-center mt-6">
+          <Button className="bg-[#7CF5D5] hover:bg-[#63dac1] border-0 text-black">
+            Ladda in fler
+          </Button>
+        </div>
+      </div>
+    </section>
   );
 }
 

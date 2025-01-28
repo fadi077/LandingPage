@@ -1,7 +1,14 @@
 import { defineConfig } from 'vite'
-import tailwindcss from '@tailwindcss/vite'
+import tailwindcss from '@tailwindcss/postcss'
+import autoprefixer from 'autoprefixer'
+
 export default defineConfig({
-  plugins: [
-    tailwindcss(),
-  ],
+  css: {
+    postcss: {
+      plugins: [
+        tailwindcss(), // Use @tailwindcss/postcss for Tailwind integration
+        autoprefixer(), // Ensures compatibility with different browsers
+      ],
+    },
+  },
 })

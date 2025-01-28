@@ -30,7 +30,7 @@ const ServiceSlider = () => {
     <div>
       <section className="py-10 px-4 bg-white">
         <div className="text-center mb-8">
-          <span className="inline-block bg-[#1A2B3B] text-[#3FF0C7] text-xs font-medium tracking-wide px-4 py-1 mb-4">
+          <span className="inline-block bg-[#1A2B3B] text-[#7CF5D5] text-xs font-medium tracking-wide px-4 py-1 mb-4">
             VÅRA TJÄNSTER
           </span>
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900">

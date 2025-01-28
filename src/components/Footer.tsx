@@ -8,7 +8,7 @@ const scrollToTop = () => {
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-white px-4 pt-16 pb-8 relative">
+    <footer className="bg-[#F6F6F6] px-4 pt-16 pb-8 mt-14 relative">
       <div className="max-w-7xl mx-auto">
         {/* Top row: Brand + Social Icons */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-12">

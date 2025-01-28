@@ -10,7 +10,10 @@ import './globals.css';
 import Blogsection from './components/Blogsection';
 import Cta from './homescreen/Cta';
 import Footer from './components/Footer';
-import ServicePage from './service/herosection'; // Import your Service page
+import ServicePage from './service/herosection'; 
+import Visionsection from "./service/Visionsection";
+import Faq from "./service/Faq";
+import CTASection from "./service/CTASection";
 
 function App() {
   return (
@@ -29,7 +32,20 @@ function App() {
             <Cta />
           </>
         } />
-        <Route path="/service" element={<ServicePage />} />
+        <Route path="/service" element={
+          <>
+          
+         <ServicePage />
+         <Logo />
+         <Visionsection />
+         <ExampleJob />
+         <Testimonals />
+         <Faq />
+         <CTASection />
+         
+      </>
+      
+      } />
       </Routes>
       <Footer />
     </>

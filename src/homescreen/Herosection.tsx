@@ -23,7 +23,7 @@ export default function HeroSection() {
             </p>
 
             <div className="mt-8 flex items-center gap-4">
-              <button className="bg-[#7CF5D5] hover:bg-[#63dac1] text-black font-semibold px-8 py-3 rounded-lg text-base transition-all">
+              <button className="bg-[#7CF5D5] hover:bg-[#63dac1] text-black font-semibold px-8 py-3 text-base transition-all">
                 Kom igång
               </button>
               <div className="flex items-center gap-2">

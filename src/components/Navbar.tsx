@@ -1,13 +1,12 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-   
-
   return (
     <nav className="bg-white border-b border-gray-100">
-      <div className=" mx-auto px-4 lg:px-16">
+      <div className="mx-auto px-4 lg:px-16">
         <div className="flex items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -20,21 +19,21 @@ export default function Navbar() {
           <div className="hidden md:flex items-center justify-between flex-1">
             {/* Center Menu Items - Now with absolute positioning for true center */}
             <div className="absolute left-1/2 transform -translate-x-1/2 flex space-x-8">
-              <a href="#!" className="text-gray-600 hover:text-gray-900 active">
+              <Link to="#!" className="text-gray-600 hover:text-gray-900 active">
                 Våra tjänster
-              </a>
-              <a href="#!" className="text-gray-600 hover:text-gray-900">
+              </Link>
+              <Link to="#!" className="text-gray-600 hover:text-gray-900">
                 Exempeljobb
-              </a>
-              <a href="#!" className="text-gray-600 hover:text-gray-900">
+              </Link>
+              <Link to="#!" className="text-gray-600 hover:text-gray-900">
                 Affärsmodell
-              </a>
-              <a href="#!" className="text-gray-600 hover:text-gray-900">
+              </Link>
+              <Link to="#!" className="text-gray-600 hover:text-gray-900">
                 Resurser
-              </a>
-              <a href="/service" className="text-gray-600 hover:text-gray-900">
+              </Link>
+              <Link to="/service" className="text-gray-600 hover:text-gray-900">
                 Service
-              </a>
+              </Link>
             </div>
 
             {/* Right Buttons */}
@@ -42,7 +41,7 @@ export default function Navbar() {
               <button className="bg-[#98f8e1] text-[#122229] px-6 py-2 rounded-md hover:bg-[#7de6cf] text-sm font-medium">
                 Boka möte
               </button>
-              <button className=" text-[#122229]  border border-gray-300 text-gray-700 px-6 py-2 rounded-md hover:bg-gray-50 text-sm font-medium">
+              <button className="text-[#122229] border border-gray-300 text-gray-700 px-6 py-2 rounded-md hover:bg-gray-50 text-sm font-medium">
                 Logga in
               </button>
             </div>
@@ -86,36 +85,36 @@ export default function Navbar() {
       {menuOpen && (
         <div className="md:hidden border-t border-gray-100">
           <div className="px-4 py-2 space-y-1">
-            <a
-              href="#!"
+            <Link
+              to="#!"
               className="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md"
             >
               Våra tjänster
-            </a>
-            <a
-              href="#!"
+            </Link>
+            <Link
+              to="#!"
               className="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md"
             >
               Exempeljobb
-            </a>
-            <a
-              href="#!"
+            </Link>
+            <Link
+              to="#!"
               className="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md"
             >
               Affärsmodell
-            </a>
-            <a
-              href="#!"
+            </Link>
+            <Link
+              to="#!"
               className="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md"
             >
               Resurser
-            </a>
-            <a
-              href="/service"
+            </Link>
+            <Link
+              to="/service"
               className="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md"
             >
               Service
-            </a>
+            </Link>
             <div className="space-y-2 pt-2">
               <button className="w-full bg-[#98f8e1] text-black px-3 py-2 rounded-md hover:bg-[#7de6cf] text-sm font-medium text-left">
                 Boka möte
